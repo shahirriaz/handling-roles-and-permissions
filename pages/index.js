@@ -1,7 +1,16 @@
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="columns-3" >
+      <div>
+        <h1>Featured news</h1>
+          {/*{Array.from(({length: 6})).map(() =)} */}
+      </div>
+      <div>
+        <h1>Latest news</h1>
+      </div>
+      <div>
+        <h1>Most read</h1>
+      </div>
     </div>
   );
 }
