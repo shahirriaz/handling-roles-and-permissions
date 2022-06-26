@@ -22,8 +22,11 @@ const SiteLayout = ({ children }) => {
   return (
     <div className="bg-white">
       <div className="mx-auto px-8">
-        <div className="px-8 py-4 flex justify-between">
-          <img className="h-8 w-8" src="/newspaper.png" alt="" />
+        <div className="py-4 flex justify-between">
+          <div className="flex items-center bg-black p-2 pr-3">
+            <img className="h-8 w-8" src="/newspaper.png" alt="" />
+            <span className="pl-3 pt-1 font-mono text-white">News app</span>
+          </div>
           <Login />
         </div>
         <div className="mx-auto">
@@ -31,7 +34,10 @@ const SiteLayout = ({ children }) => {
             <div className="py-4 flex justify-between	">
               {menuItems.map((item) => {
                 return (
-                  <Link key={uniqueId()} href="">
+                  <Link
+                    key={uniqueId()}
+                    href={`/category/${item.toLowerCase()}`}
+                  >
                     <a className="">{item}</a>
                   </Link>
                 );

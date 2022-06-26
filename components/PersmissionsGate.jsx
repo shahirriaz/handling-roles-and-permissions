@@ -6,18 +6,32 @@ const hasPermission = ({ permissions, scopes }) => {
     scopesMap[scope] = true;
   });
 
-  return permissions.some((permission) => scopesMap[permission]);
+  return permissions?.some((permission) => scopesMap[permission]);
 };
 
-function useGetRole() {}
+// function useGetRole() {
+//   return { role: "viewer" };
+// }
 
-export default function PermissionsGate({ children, scopes = [] }) {
-  const { role } = useGetRole();
-  const permissions = PERMISSIONS[role];
+export const ROLES = {
+  viewer: "VIEWER",
+  editor: "EDITOR",
+  owner: "OWNER",
+};
+
+export default function PermissionsGate({
+  children,
+  scopes = [],
+  RenderError = () => <></>,
+}) {
+  // const { role } = useGetRole();
+  const permissions = PERMISSIONS[ROLES.viewer];
+
+  console.log(permissions);
 
   const permissionGranted = hasPermission({ permissions, scopes });
 
-  if (!permissionGranted) return <></>;
+  if (!permissionGranted) return <RenderError />;
 
   return <>{children}</>;
 }
