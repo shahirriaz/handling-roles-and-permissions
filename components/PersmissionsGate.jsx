@@ -2,32 +2,23 @@ import { PERMISSIONS } from "../utils/permission-map";
 
 const hasPermission = ({ permissions, scopes }) => {
   const scopesMap = {};
-  scopes.forEach((scope) => {
+  scopes?.forEach((scope) => {
     scopesMap[scope] = true;
   });
 
   return permissions?.some((permission) => scopesMap[permission]);
 };
 
-// function useGetRole() {
-//   return { role: "viewer" };
-// }
-
-export const ROLES = {
-  viewer: "VIEWER",
-  editor: "EDITOR",
-  owner: "OWNER",
-};
-
+function useGetRole() {
+  return { role: "VIEWER" };
+}
 export default function PermissionsGate({
   children,
   scopes = [],
   RenderError = () => <></>,
 }) {
-  // const { role } = useGetRole();
-  const permissions = PERMISSIONS[ROLES.viewer];
-
-  console.log(permissions);
+  const { role } = useGetRole();
+  const permissions = PERMISSIONS[role];
 
   const permissionGranted = hasPermission({ permissions, scopes });
 

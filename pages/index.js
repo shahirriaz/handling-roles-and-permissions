@@ -4,6 +4,9 @@ import { LatestNewsArticles } from "../components/Article/LatestNewsArticles";
 import { MostReadArticles } from "../components/MostReadArticles";
 
 export default function Home() {
+  const reader = true;
+  const admin = true;
+
   return (
     <>
       <FeaturedNewsArticles />

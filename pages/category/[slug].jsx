@@ -4,6 +4,7 @@ import {
   LeftSection,
   RightSection,
 } from "../../components/Article/ArticleComponents";
+import SiteLayout from "../../components/SiteLayout";
 
 const Category = () => {
   const router = useRouter();

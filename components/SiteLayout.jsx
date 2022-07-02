@@ -37,7 +37,8 @@ const SiteLayout = ({ children }) => {
   const [navbar, setNavbar] = useState(true);
 
   useEffect(() => {
-    if (router.route === "/login") setNavbar(false);
+    if (router.route === "/login" || router.route === "/admin")
+      setNavbar(false);
     else setNavbar(true);
   }, [router.route]);
 
@@ -53,21 +54,20 @@ const SiteLayout = ({ children }) => {
               </span>
             </Link>
           </div>
-          <Login />
+          {router.route !== "/login" && <Login />}
         </div>
-        {navbar && (
-          <Navbar
-            callbackfn={(item) => {
-              return (
-                <Link key={uniqueId()} href={`/category/${item.toLowerCase()}`}>
-                  <a className="">{item}</a>
-                </Link>
-              );
-            }}
-          />
-        )}
+
+        <Navbar
+          callbackfn={(item) => {
+            return (
+              <Link key={uniqueId()} href={`/category/${item.toLowerCase()}`}>
+                <a className="">{item}</a>
+              </Link>
+            );
+          }}
+        />
       </div>
-      <div className="px-8 py-4 ">{children}</div>
+      <div className="px-8 py-4">{children}</div>
     </div>
   );
 };
