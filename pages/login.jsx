@@ -1,9 +1,5 @@
 const LoginPage = () => {
-  return (
-    <div>
-      <h1>Log in page</h1>
-    </div>
-  );
+  return <div className="border-2 flex items-center justify-center"></div>;
 };
 
 export default LoginPage;

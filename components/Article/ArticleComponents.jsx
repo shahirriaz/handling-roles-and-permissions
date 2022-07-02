@@ -35,10 +35,10 @@ export function RightSection({ data }) {
     </div>
   );
 }
-function ArticleListIitem({ listItem }) {
-  return <div>{listItem.title}</div>;
-}
 
 function ArticleList({ item }) {
   return <ArticleListIitem listItem={item} />;
+}
+function ArticleListIitem({ listItem }) {
+  return <div>{listItem.title}</div>;
 }

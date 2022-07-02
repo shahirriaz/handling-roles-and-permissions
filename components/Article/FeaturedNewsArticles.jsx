@@ -1,6 +1,6 @@
 import { uniqueId } from "lodash";
 import { useMemo } from "react";
-import { useDataFetcher } from "../hooks/data/useDataFetcher";
+import { useDataFetcher } from "../../hooks/data/useDataFetcher";
 
 export function FeaturedNewsArticles({}) {
   const { data } = useDataFetcher(

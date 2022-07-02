@@ -1,4 +1,4 @@
-import { useDataFetcher } from "../hooks/data/useDataFetcher";
+import { useDataFetcher } from "../../hooks/data/useDataFetcher";
 import { uniqueId } from "lodash";
 import Link from "next/link";
 
@@ -12,13 +12,13 @@ export function LatestNewsArticles({}) {
       <h2 className="font-bold text-2xl pl-4">Latest news</h2>
       <div className="pt-3 pl-4 pr-4">
         {data &&
-          data?.articles.map((item) => {
+          data?.articles.map((item, idx) => {
             return (
               <div className="border-b-2 mb-2" key={uniqueId()}>
                 <h2 className="text-xl font-semibold pb-1">{item.title}</h2>
                 <p className="text-sm pb-2">{item.description.slice(0, 80)}</p>
                 <div className="mb-2">
-                  <Link href="/">
+                  <Link href={`/article/${item.title}`}>
                     <a className="text-sm pb-2 text-blue-600">
                       Continue Reading
                     </a>

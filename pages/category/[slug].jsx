@@ -9,13 +9,13 @@ const Category = () => {
   const router = useRouter();
   const { slug } = router.query;
 
-  const { data } = useDataFetcher(
-    `https://newsapi.org/v2/everything?q=${slug}&apiKey=1d51297178074cc99f3abaad1adcf67f&pageSize=5`
-  );
+  // const { data } = useDataFetcher(
+  //   `https://newsapi.org/v2/everything?q=${slug}&apiKey=1d51297178074cc99f3abaad1adcf67f&pageSize=5`
+  // );
   return (
     <article className="grid grid-cols-2">
-      <LeftSection data={data} />
-      <RightSection data={data} />
+      {/*<LeftSection data={data} />*/}
+      {/*<RightSection data={data} />*/}
     </article>
   );
 };

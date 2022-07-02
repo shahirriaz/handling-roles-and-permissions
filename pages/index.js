@@ -1,6 +1,6 @@
 import SiteLayout from "../components/SiteLayout";
-import { FeaturedNewsArticles } from "../components/FeaturedNewsArticles";
-import { LatestNewsArticles } from "../components/LatestNewsArticles";
+import { FeaturedNewsArticles } from "../components/Article/FeaturedNewsArticles";
+import { LatestNewsArticles } from "../components/Article/LatestNewsArticles";
 import { MostReadArticles } from "../components/MostReadArticles";
 
 export default function Home() {
